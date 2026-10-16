@@ -1,2 +1,83 @@
-theme: jekyll-theme-minimal
+# Site settings
+# This file is *NOT* reloaded automatically when you use 'bundle exec jekyll serve'.
+# If you change it, restart the server.
+#
+# Theme docs: https://mmistakes.github.io/minimal-mistakes/docs/configuration/
+
+remote_theme: mmistakes/minimal-mistakes@4.27.3
+minimal_mistakes_skin: default # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
+
+domain: erickimyh.github.io
 title: Eric Kim
+# email: your-email@example.com
+description: >-
+  I am an applied mathematician pivoting to data science and machine learning. I graduated
+  from my PhD at UCLA in June 2026.
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://erickimyh.github.io"
+repository: erickimyh/erickimyh.github.io
+github_username: erickimyh
+search: true
+
+# Shown in the left sidebar on pages that set `author_profile: true`.
+author:
+  name: Eric Kim
+  avatar: # e.g. /assets/images/profile.jpg
+  bio: Applied mathematician working in data science and machine learning. PhD, UCLA (2026).
+  location: Los Angeles, CA
+  links:
+    - label: GitHub
+      icon: fab fa-fw fa-github
+      url: https://github.com/erickimyh
+
+footer:
+  links:
+    - label: GitHub
+      icon: fab fa-fw fa-github
+      url: https://github.com/erickimyh
+
+# Build settings
+markdown: kramdown
+plugins:
+  - jekyll-feed
+  - jekyll-include-cache
+  - jekyll-remote-theme
+
+# Projects live in _projects/ (one Markdown file per project) and are listed on /projects/.
+collections:
+  projects:
+    output: true
+    permalink: /projects/:name/
+
+# Front matter defaults so individual files don't need to repeat these.
+defaults:
+  - scope:
+      path: ""
+      type: pages
+    values:
+      layout: single
+      author_profile: true
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: single
+      author_profile: true
+      read_time: true
+      share: false
+      related: true
+  - scope:
+      path: ""
+      type: projects
+    values:
+      layout: single
+      author_profile: true
+
+include:
+  - _pages
+
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor/
