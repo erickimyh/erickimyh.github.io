@@ -1,0 +1,39 @@
+---
+# Only the main Sass file needs front matter (the dashes are enough)
+search: false
+---
+
+@charset "utf-8";
+
+@import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}"; // skin
+@import "minimal-mistakes"; // main partials
+
+/* Custom styles: everything below overrides the theme. */
+
+/* Space between the name and the location/links in the sidebar profile.
+   `.sidebar` is needed to beat the theme's `.sidebar h3 { margin-bottom: 0 }`. */
+.sidebar .author__name {
+  @include breakpoint($large) {
+    margin-bottom: 0.75em;
+  }
+}
+
+/* Small project thumbnail on the home page: floats beside the blurb on wide
+   screens, sits centered above it on phones. */
+.project-thumb {
+  display: block;
+  width: 200px;
+  margin: 0 auto 1em;
+  border-radius: $border-radius;
+
+  @include breakpoint($medium) {
+    float: right;
+    margin: 0 0 1em 1.5em;
+  }
+}
+
+/* Start each project heading below the previous project's thumbnail. */
+.page__content h2,
+.page__content h3 {
+  clear: both;
+}
